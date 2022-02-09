@@ -1,0 +1,132 @@
+.main {
+    width: 1440px;
+    height: 100vh;
+    background-color: hsl(0, 0%, 95%);
+    color: hsl(0, 0%, 95%);
+    font-size: 15px;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    display: grid;
+    grid-template-columns: 250px repeat(3, 1fr) 250px;
+    grid-template-rows: 170px 1fr 130px;
+    grid-template-areas: ". . . . ." ". sedans suvs luxury ." ". . . . .";
+}
+
+@media  (max-width: 376px) {
+    .main{
+        width: 375px;
+        margin-top: 85px;
+        margin-bottom: 85px;
+        margin-right: 25px;
+        margin-left: 25px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: "sedans sedans sedans" "suvs suvs suvs" "luxury luxury luxury";
+    }
+}
+
+.sedans, .suvs, .luxury {
+    width: calc(100% - 80px);
+    height: calc(100% - 100px);
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.details {
+    width: 100%;
+    flex-grow: 2;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+img {
+    width: 64px;
+    height: 40px;
+    margin: 0%;
+}
+
+h1 {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+p {
+    margin-top: 0%;
+}
+
+.learnMoreButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    flex-grow: 1;
+}
+
+button {
+    width: 65%;
+    padding: 20px;
+    border-radius: 50px;
+    border: 2px solid hsl(0, 0%, 95%);
+    background-color: hsl(0, 0%, 95%);
+    font-family: "Lexend Deca", sans-serif;
+    text-transform: capitalize;
+}
+
+.sedans button {
+    color: hsl(31, 77%, 52%);
+}
+
+.suvs button {
+    color: hsl(184, 100%, 22%);
+}
+
+.luxury button {
+    color: hsl(179, 100%, 13%);
+}
+
+.sedans button:hover {
+    color: hsl(0, 0%, 95%);
+    background-color: hsl(31, 77%, 52%);
+    cursor: pointer;
+}
+
+.suvs button:hover {
+    color: hsl(0, 0%, 95%);
+    background-color: hsl(184, 100%, 22%);
+    cursor: pointer;
+}
+
+.luxury button:hover {
+    color: hsl(0, 0%, 95%);
+    background-color: hsl(179, 100%, 13%);
+    cursor: pointer;
+}
+
+.sedans {
+    grid-area: sedans;
+    background-color: hsl(31, 77%, 52%);
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.suvs {
+    grid-area: suvs;
+    background-color: hsl(184, 100%, 22%);
+}
+
+.luxury {
+    grid-area: luxury;
+    background-color: hsl(179, 100%, 13%);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+    
